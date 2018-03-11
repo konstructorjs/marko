@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/konstructorjs/marko#readme",
   "dependencies": {
+    "chokidar": "^2.0.2",
     "marko": "^4.8.0"
   },
   "devDependencies": {

@@ -1,12 +1,27 @@
 const path = require('path');
+const chokidar = require('chokidar');
 
 module.exports = class marko {
-  static setup(app) {
+  constructor(options = {}) {
+    this.liveReload = options.liveReload || true;
+    this.writeToDisk = options.writeToDisk || false;
+  }
+
+  setup(app) {
     require('marko/node-require').install({
       compilerOptions: {
-        writeToDisk: false,
+        writeToDisk: this.writeToDisk,
       },
     });
+
+    if (this.liveReload) {
+      const hotReload = require('marko/hot-reload');
+      hotReload.enable();
+      const currentDirectory = process.cwd();
+      chokidar.watch(`${currentDirectory}/**/*.marko`).on('change', (file) => {
+        hotReload.handleFileModified(file);
+      });
+    }
 
     app.render = async (templatePath, data) => {
       const template = require(templatePath);
