@@ -11,7 +11,9 @@
     "lint": "eslint *.js src/*"
   },
   "files": [
-    "lib"
+    "lib",
+    "components",
+    "marko.json"
   ],
   "repository": {
     "type": "git",
@@ -30,6 +32,7 @@
   "homepage": "https://github.com/konstructorjs/marko#readme",
   "dependencies": {
     "chokidar": "^2.0.2",
+    "livereload": "^0.7.0",
     "marko": "^4.8.0"
   },
   "devDependencies": {
