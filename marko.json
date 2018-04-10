@@ -1,13 +1,13 @@
 {
   "<import-stylesheets>": {
-    "template": "./components/import-stylesheets.marko",
+    "template": "./components/import-stylesheets/index.marko",
     "@css": "*"
   },
   "<import-javascripts>": {
-    "template": "./components/import-javascripts.marko",
+    "template": "./components/import-javascripts/index.marko",
     "@js": "*"
   },
   "<render>": {
-    "template": "./components/render.marko"
+    "template": "./components/render/index.marko"
   }
 }
