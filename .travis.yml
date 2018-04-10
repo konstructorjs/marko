@@ -3,6 +3,7 @@ node_js: lts/*
 
 cache:
   directories:
+    - ~/.npm
     - node_modules
 
 install:
@@ -10,3 +11,9 @@ install:
 
 script:
   - npm test
+
+after_success:
+  - npm run travis-deploy-once "npm run semantic-release"
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
