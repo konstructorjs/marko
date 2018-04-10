@@ -5,7 +5,7 @@
 </if>
 <if(input.assets)>
   <if(input.assets.css)>
-    <for(file in input.css)>
+    <for(file in input.assets.css)>
       <link rel="stylesheet" type="text/css" href="/assets/css/${file}">
     </for>
   </if>

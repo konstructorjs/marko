@@ -5,7 +5,7 @@
 </if>
 <if(input.assets)>
   <if(input.assets.js)>
-    <for(file in input.js)>
+    <for(file in input.assets.js)>
       <script type="text/javascript" src="/assets/js/${file}"></script>
     </for>
   </if>
